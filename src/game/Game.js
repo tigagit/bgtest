@@ -1,6 +1,9 @@
 // src/game/Game.js
 const MyGame = {
-    setup: () => ({ players: [] }),
+    setup: () => {
+        console.log("Game setup called. Initializing players array.");
+        return { players: [] };
+    },
 
     moves: {
         addPlayer(G, ctx) {
