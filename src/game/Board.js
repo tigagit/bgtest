@@ -4,7 +4,7 @@ import { Client } from 'boardgame.io/react';
 import MyGame from './Game';
 
 const Board = ({ G, ctx, moves }) => {
-    console.log("Rendering Board component with players:", G.players); // Check what G.players contains
+    console.log("Rendering Board component with players:", G.players); // Log the players array
 
     return (
         <div>
