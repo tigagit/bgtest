@@ -1,15 +1,15 @@
 // src/game/Game.js
-
 const MyGame = {
     setup: () => ({ players: [] }),
 
     moves: {
         addPlayer(G, ctx) {
-            G.players.push(ctx.playerID);
+            const newPlayerID = ctx.currentPlayer;
+            if (!G.players.includes(newPlayerID)) {
+                G.players.push(newPlayerID);
+            }
         },
     },
-
-    // Add more game logic as needed
 };
 
 export default MyGame;
