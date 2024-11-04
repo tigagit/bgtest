@@ -4,10 +4,8 @@ const MyGame = {
 
     moves: {
         addPlayer(G, ctx) {
-            const newPlayerID = ctx.currentPlayer;
-            if (!G.players.includes(newPlayerID)) {
-                G.players.push(newPlayerID);
-            }
+            const newPlayerID = `Player ${G.players.length + 1}`;
+            G.players.push(newPlayerID);
         },
     },
 };
