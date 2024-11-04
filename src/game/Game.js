@@ -1,23 +1,22 @@
 // src/game/Game.js
-const MyGame = {
-    setup: () => {
-        console.log("Game setup called. Initializing players array.");
-        return { players: [] };
-    },
+import { Game } from 'boardgame.io/core';
+
+const MyGame = Game({
+    setup: () => ({
+        players: []  // Ensure players is initialized
+    }),
 
     moves: {
         addPlayer(G, ctx) {
-            console.log("Current state of G:", G); // Log G to see if players exist
+            // Initialize players array if undefined
             if (!G.players) {
-                console.log("G.players is undefined, initializing now");
                 G.players = [];
             }
-            const newPlayerID = `Player ${G.players.length + 1}`;
-            console.log("addPlayer move called, adding:", newPlayerID);
-            G.players.push(newPlayerID);
-            console.log("Updated players list:", G.players);
+            G.players.push(ctx.playerID); // Push the current player ID
         },
     },
-};
+
+    // Add more game logic as needed
+});
 
 export default MyGame;
