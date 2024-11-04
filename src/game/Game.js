@@ -1,5 +1,4 @@
 // src/game/Game.js
-import { Game } from 'boardgame.io/core';
 
 const MyGame = Game({
     setup: () => ({ players: [] }),
