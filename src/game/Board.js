@@ -1,14 +1,11 @@
 // src/game/Board.js
-import React, { useState } from 'react';
+import React from 'react';
 import { Client } from 'boardgame.io/react';
 import MyGame from './Game';
 
-const Board = ({ G, ctx, moves }) => {
-    const [update, setUpdate] = useState(0); // Used to trigger re-render
-
+const Board = ({ G, moves }) => {
     const addPlayerHandler = () => {
         moves.addPlayer();
-        setUpdate((prev) => prev + 1); // Trigger re-render after move
     };
 
     console.log("Rendering Board component with players:", G.players);
@@ -25,7 +22,7 @@ const Board = ({ G, ctx, moves }) => {
 const GameClient = Client({
     game: MyGame,
     board: Board,
-    debug: true,  // This will help us see state changes in the browser console
+    debug: true,  // Shows game state in the debug panel
 });
 
 export default GameClient;
