@@ -1,18 +1,20 @@
 // src/game/Game.js
-
 const MyGame = {
-    setup: () => ({
-        players: []
-    }),
+    setup: () => ({ players: [] }),
 
     moves: {
         addPlayer(G, ctx) {
-            // Spread the current players into a new array, adding a new player
-            const newPlayers = [...G.players, `Player ${G.players.length + 1}`];
-            G.players = newPlayers; // Replace the original array
+            // Ensure players array is initialized
+            if (!Array.isArray(G.players)) {
+                G.players = [];
+            }
+
+            // Add a new player
+            const newPlayer = `Player ${G.players.length + 1}`;
+            G.players.push(newPlayer);
             console.log("Updated players list:", G.players);
         },
-    }
+    },
 };
 
 export default MyGame;
