@@ -1,17 +1,11 @@
 // src/game/Game.js
 const MyGame = {
-    setup: () => ({ players: [] }),
+    setup: () => ({ players: [] }), // Initialize players as an empty array
 
     moves: {
         addPlayer(G, ctx) {
-            // Ensure players array is initialized
-            if (!Array.isArray(G.players)) {
-                G.players = [];
-            }
-
-            // Add a new player
-            const newPlayer = `Player ${G.players.length + 1}`;
-            G.players.push(newPlayer);
+            if (!G.players) G.players = []; // Ensure players is initialized
+            G.players.push(`Player ${G.players.length + 1}`);
             console.log("Updated players list:", G.players);
         },
     },
