@@ -1,17 +1,17 @@
 // src/game/Game.js
-import { Game } from 'boardgame.io/core';
 
-const MyGame = Game({
+const MyGame = {
     setup: () => ({
-        players: []  // Start with an empty players array
+        players: []  // Initialize players as an empty array
     }),
 
     moves: {
         addPlayer(G, ctx) {
+            if (!G.players) G.players = [];  // Ensure players array exists
             G.players.push(`Player ${G.players.length + 1}`);
             console.log("Updated players list:", G.players);
         },
     }
-});
+};
 
 export default MyGame;
