@@ -3,8 +3,8 @@ import React from 'react';
 import { Client } from 'boardgame.io/react';
 import MyGame from './Game';
 
-const Board = ({ G, ctx, moves }) => {
-    console.log("Rendering Board component with players:", G.players); // Log the players array
+const Board = ({ G, moves }) => {
+    console.log("Rendering Board component with players:", G.players);
 
     return (
         <div>
