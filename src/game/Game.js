@@ -3,20 +3,15 @@ import { Game } from 'boardgame.io/core';
 
 const MyGame = Game({
     setup: () => ({
-        players: []  // Ensure players is initialized
+        players: []  // Start with an empty players array
     }),
 
     moves: {
         addPlayer(G, ctx) {
-            // Initialize players array if undefined
-            if (!G.players) {
-                G.players = [];
-            }
-            G.players.push(ctx.playerID); // Push the current player ID
+            G.players.push(`Player ${G.players.length + 1}`);
+            console.log("Updated players list:", G.players);
         },
-    },
-
-    // Add more game logic as needed
+    }
 });
 
 export default MyGame;
